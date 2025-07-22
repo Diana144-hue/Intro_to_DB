@@ -1,11 +1,9 @@
 Create DATABESE IF NOT EXISTS alx_book_store;
-USE alx_book_store;
-CREATE Authors Table
+USE alx_book_store
 CREATE TABLE Authors (
      author_id INT AUTO_INCREMENT PRIMARY KEY,
      author_name VARCHAR(215) NOT NULL
 );
-CREATE Books Table
 CREATE TABLE Books (
      book_id INT AUTO_INCREMENT PRIMARY KEY,
      title VARCHAR(130) NOT NULL,
@@ -14,14 +12,12 @@ CREATE TABLE Books (
      publication_date DATE,
      FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
-Create Customers Table
 CREATE TABLE Orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     order_date DATE,
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
-Create Order_Details Table
 CREATE TABLE Order_Details (
     orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
