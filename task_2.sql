@@ -34,11 +34,11 @@ CREATE TABLE IF NOT EXISTS ORDERS (
   FOREIGN KEY (customer_id) REFERENCES CUSTOMERS(customer_id)
 );
 
-CREATE TABLE IF NOT EXISTS ORDER_DETAILS (
+CREATE TABLE IF NOT EXISTS `ORDER DETAILS` (
   order_detail_id INT PRIMARY KEY,
   order_id INT NOT NULL,
   book_id INT NOT NULL,
-  quantity_id INT NOT NULL,
+  quantity_ordered INT NOT NULL,
   price_per_unit DECIMAL(10,2) NOT NULL,
   FOREIGN KEY (order_id) REFERENCES ORDERS(order_id),
   FOREIGN KEY (book_id) REFERENCES BOOKS(book_id)
